@@ -1,0 +1,151 @@
+<resources>
+    <string name="app_name">Pet Keeper</string>
+    <string name="pet_name">Name: %s</string>
+    <string name="choose_order_type">Choose order type:</string>
+    <string name="full_time_care">Full time care</string>
+    <string name="temporary_care">Temporary care</string>
+    <string name="new_order">New order</string>
+    <string name="general_information">General information</string>
+    <string name="pet_name_hint">Pet name</string>
+    <string name="pet_type_hint">Pet type</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="years_hint">Years</string>
+    <string name="months_hint">Months</string>
+    <string name="weight_hint">Weight</string>
+    <string name="pet_picture">Pet picture</string>
+    <string name="pet_character">Pet character</string>
+    <string name="is_your_pet_friendly">Is your pet friendly</string>
+    <string name="to_other_people">To other people</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="don_t_know">Don\'t know</string>
+    <string name="to_children">To children</string>
+    <string name="person_chose_you">%s chose you.\nContacts below:</string>
+    <string name="to_cats">To cats</string>
+    <string name="to_dogs">To dogs</string>
+    <string name="attention">Attention!</string>
+    <string name="close_order">Are you sure you want to close this order?</string>
+    <string name="to_other_animals">To other animals</string>
+    <string name="what_animals_hint">What animals?</string>
+    <string name="what_pets_can_live_with_your_pet">What pets can live with your pet?</string>
+    <string name="dogs">Dogs</string>
+    <string name="any">Any</string>
+    <string name="cats">Cats</string>
+    <string name="dogs_lc">dogs</string>
+    <string name="cats_lc">cats</string>
+    <string name="other_animals_lc">other animals</string>
+    <string name="other_animals">Other animals</string>
+    <string name="what_animals_and_gender_hint">What animals and gender?</string>
+    <string name="is_your_pet_litter_box_trained">Is your pet litter box trained?</string>
+    <string name="does_your_pet_mark_things">Does your pet mark things?</string>
+    <string name="does_your_pet_chew_things">Does your pet chew things?</string>
+    <string name="medical_information">Medical information</string>
+    <string name="is_your_pet_vaccinated">Is your pet vaccinated?</string>
+    <string name="is_your_pet_sterilised">Is your pet sterilised?</string>
+    <string name="any_diseases_hint">Any diseases?</string>
+    <string name="pet_care_details">Pet care details</string>
+    <string name="can_your_pet_stay_alone_at_home">Can your pet stay alone at home?</string>
+    <string name="what_food_does_your_pet_eat_hint">What food does your pet eat?</string>
+    <string name="what_food_to_avoid_hint">What food to avoid?</string>
+    <string name="how_often_to_feed_your_pet_hint">How often to feed your pet?</string>
+    <string name="does_your_pet_need_walking">Does your pet need walking?</string>
+    <string name="how_often_to_walk_your_pet_hint">How often to walk your pet?</string>
+    <string name="any_warnings_while_walking_your_pet_hint">Any warnings while walking your pet?</string>
+    <string name="does_your_pet_need_playing_with_it">Does your pet need playing with it?</string>
+    <string name="how_to_play_with_your_pet_hint">How to play with your pet?</string>
+    <string name="how_to_wash_your_pet_or_its_place_hint">How to wash your pet or its place?</string>
+    <string name="any_more_recommendations_hint">Any more recommendations?</string>
+    <string name="submit_order">Submit order</string>
+    <string name="pet_breed_and_weight">%s, %.2f kg</string>
+    <string name="pet_type_and_age">%s, %d y. %d m.</string>
+    <string name="pet_is_friendly_to">%s is friendly:</string>
+    <string name="pet_is_not_friendly_to">%s is not friendly:</string>
+    <string name="user_rating_votes">%.2f (%d)</string>
+    <string name="pet_can_live_with">%s can live with %s</string>
+    <string name="litter_box_trained">is litter box trained</string>
+    <string name="not_litter_box_trained">is not litter box trained</string>
+    <string name="chews_things">chews things</string>
+    <string name="doesnt_chew_things">doesn\'t chew things</string>
+    <string name="marks_things">and marks things</string>
+    <string name="doesnt_mark_things">and doesn\'t mark things</string>
+    <string name="pet_name_and_text">%s %s</string>
+    <string name="vaccinated">is vaccinated</string>
+    <string name="not_vaccinated">is not vaccinated</string>
+    <string name="sterilized">and is sterilized</string>
+    <string name="not_sterilized">and is not sterilized</string>
+    <string name="diseases">Diseases:</string>
+    <string name="can_stay_alone">can stay alone at home</string>
+    <string name="can_not_stay_alone">can\'t stay alone at home</string>
+    <string name="what_food_does_pet_eat">What food does %s eat:</string>
+    <string name="what_food_to_avoid">What food to avoid:</string>
+    <string name="respond">Respond</string>
+    <string name="how_often_to_feed">How often to feed:</string>
+    <string name="needs_walking">%s needs walking</string>
+    <string name="doesnt_need_walking">%s doesn\'t need walking</string>
+    <string name="how_often_to_walk">How often to walk:</string>
+    <string name="warnings_while_walking">Warnings while walking:</string>
+    <string name="needs_playing">%s needs playing</string>
+    <string name="doesnt_need_playing">%s doesn\'t need playing</string>
+    <string name="how_to_play">How to play:</string>
+    <string name="how_to_wash">How to wash:</string>
+    <string name="other_recs">Other recommendations:</string>
+    <string name="edit_profile">Edit profile</string>
+    <string name="orders">Orders:</string>
+    <string name="sign_in_with_google">Sign in with Google</string>
+    <string name="or_sign_in_with">Or sign in with:</string>
+    <string name="profile">Profile</string>
+    <string name="comments">%d comments</string>
+    <string name="leave_comment">Leave comment</string>
+    <string name="new_orders_header">New orders!</string>
+    <string name="new_orders_text">Got new orders for your filter settings. Check them out!</string>
+    <string name="no_phone">No phone number</string>
+    <string name="name_surname">%s %s</string>
+    <string name="name">Name:</string>
+    <string name="surname">Surname:</string>
+    <string name="phone">Phone:</string>
+    <string name="submit">Submit</string>
+    <string name="order_list">Order list</string>
+    <string name="filter">Filter</string>
+    <string name="respond_hint">Tell why you want to take care of this pet</string>
+    <string name="comments_header">Comments:</string>
+    <string name="sort_by">Sort by:</string>
+    <string name="choose_pet_type">Choose pet type</string>
+    <string name="choose_pet_breed">Choose pet breed (if necessary)</string>
+    <string name="notify">Notify me of new posts</string>
+    <string name="pet_breed_hint">Pet breed</string>
+    <string name="is_this_pet_litter_box_trained">Is this pet litter box trained?</string>
+    <string name="reset_filters">Reset filters</string>
+    <string name="is_this_order_temporary">Is this order temporary?</string>
+    <string name="age">Age: %d-%d</string>
+    <string name="leave_your_contacts_below">Leave your contacts below:</string>
+    <string name="contacts">Contacts</string>
+    <string name="notifications">Notifications</string>
+    <string name="notifications_header">Notifications:</string>
+
+    <string-array name="gender_array">
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+
+    <string-array name="order_array">
+        <item>Placed</item>
+        <item>Taken</item>
+        <item>All</item>
+    </string-array>
+
+    <string-array name="pet_type_array">
+        <item>Dog</item>
+        <item>Cat</item>
+        <item>Bird</item>
+        <item>Insect</item>
+        <item>Reptile</item>
+        <item>Fish</item>
+    </string-array>
+
+    <string-array name="dog_breed_array">
+        <item>chihua-hua</item>
+        <item>Rotveyler</item>
+    </string-array>
+
+</resources>

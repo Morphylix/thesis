@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_nav_graph"
+    app:startDestination="@id/orderListFragment">
+    <fragment
+        android:id="@+id/orderListFragment"
+        android:name="com.morphylix.android.petkeeper.presentation.order_list.OrderListFragment"
+        android:label="Order List"
+        tools:layout="@layout/fragment_order_list">
+        <action
+            android:id="@+id/action_orderListFragment_to_chooseOrderTypeFragment"
+            app:destination="@id/chooseOrderTypeFragment" />
+        <action
+            android:id="@+id/action_orderListFragment_to_orderDetailsFragment"
+            app:destination="@id/orderDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/createOrderFragment"
+        android:name="com.morphylix.android.petkeeper.presentation.create_order.CreateOrderFragment"
+        android:label="Create order"
+        tools:layout="@layout/fragment_create_order">
+        <argument
+            android:name="startDate"
+            app:argType="long" />
+        <argument
+            android:name="endDate"
+            app:argType="long" />
+    </fragment>
+    <fragment
+        android:id="@+id/chooseOrderTypeFragment"
+        android:name="com.morphylix.android.petkeeper.presentation.create_order.ChooseOrderTypeFragment"
+        android:label="Choose order type" >
+        <action
+            android:id="@+id/action_chooseOrderTypeFragment_to_createOrderFragment"
+            app:destination="@id/createOrderFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/orderDetailsFragment"
+        android:name="com.morphylix.android.petkeeper.presentation.order_details.OrderDetailsFragment"
+        android:label="Order details" >
+        <argument
+            android:name="orderId"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_orderDetailsFragment_to_userProfileFragment"
+            app:destination="@id/userProfileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userProfileFragment"
+        android:name="com.morphylix.android.petkeeper.presentation.user_profile.UserProfileFragment"
+        android:label="User profile" >
+        <action
+            android:id="@+id/action_userProfileFragment_to_editProfileFragment"
+            app:destination="@id/editProfileFragment" />
+        <action
+            android:id="@+id/action_userProfileFragment_to_orderDetailsFragment"
+            app:destination="@id/orderDetailsFragment" />
+        <argument
+            android:name="userEmail"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null"/>
+        <action
+            android:id="@+id/action_userProfileFragment_to_leaveCommentFragment"
+            app:destination="@id/leaveCommentFragment" />
+        <action
+            android:id="@+id/action_userProfileFragment_to_commentListFragment"
+            app:destination="@id/commentListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editProfileFragment"
+        android:name="com.morphylix.android.petkeeper.presentation.edit_profile.EditProfileFragment"
+        android:label="Edit profile" />
+    <fragment
+        android:id="@+id/leaveCommentFragment"
+        android:name="com.morphylix.android.petkeeper.presentation.leave_comment.LeaveCommentFragment"
+        android:label="Leave comment" >
+        <argument
+            android:name="userEmail"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/commentListFragment"
+        android:name="com.morphylix.android.petkeeper.presentation.comment_list.CommentListFragment"
+        android:label="Comment list" >
+        <argument
+            android:name="email"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/filterSettingsFragment"
+        android:name="com.morphylix.android.petkeeper.presentation.filter_settings.FilterSettingsFragment"
+        android:label="Filter settings" >
+        <action
+            android:id="@+id/action_filterSettingsFragment_to_orderListFragment"
+            app:destination="@id/orderListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/notificationListFragment"
+        android:name="com.morphylix.android.petkeeper.presentation.notification_list.NotificationListFragment"
+        android:label="Notification list" />
+</navigation>

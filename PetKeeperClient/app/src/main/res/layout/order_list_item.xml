@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_margin="8dp">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/pet_pic_image_view"
+        android:layout_width="150dp"
+        android:layout_height="200dp"
+        android:src="@android:drawable/alert_dark_frame"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/pet_name_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/pet_pic_image_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="32dp"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        tools:text="Richard"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/pet_type_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/pet_name_text_view"
+        app:layout_constraintStart_toEndOf="@id/pet_pic_image_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="20sp"
+        tools:text="Cat"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/user_name_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toEndOf="@id/pet_pic_image_view"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@id/rating_pic_image_view"
+        app:layout_constraintTop_toBottomOf="@id/pet_type_text_view"
+        tools:text="Michael"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/order_date_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/pet_pic_image_view"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/user_name_text_view"
+        tools:text="4 days ago"/>
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/rating_pic_image_view"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/baseline_star_yellow_700_24dp"
+        app:layout_constraintStart_toEndOf="@+id/user_name_text_view"
+        app:layout_constraintEnd_toStartOf="@id/user_rating_text_view"
+        app:layout_constraintTop_toTopOf="@+id/user_name_text_view"
+        />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/user_rating_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/rating_pic_image_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/user_name_text_view"
+
+        tools:text="4.76"/>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

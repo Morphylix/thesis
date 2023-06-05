@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/userProfileFragment"
+        android:icon="@drawable/profile_image_stub"
+        android:title="@string/profile" />
+
+    <item
+        android:id="@+id/orderListFragment"
+        android:icon="@drawable/order_list_icon"
+        android:title="@string/order_list" />
+
+    <item
+        android:id="@+id/notificationListFragment"
+        android:icon="@drawable/notification_icon"
+        android:title="@string/notifications" />
+
+</menu>

@@ -1,0 +1,922 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="16dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/new_order_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:paddingBottom="16dp"
+            android:text="@string/new_order"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/general_information_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="@string/general_information"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/new_order_text_view" />
+
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/create_order_divider1"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            app:layout_constraintTop_toBottomOf="@id/general_information_text_view" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/pet_name_input_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:hint="@string/pet_name_hint"
+            app:layout_constraintTop_toBottomOf="@id/create_order_divider1">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/pet_name_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/pet_type_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/pet_type_hint"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/pet_type_spinner"
+            app:layout_constraintBottom_toBottomOf="@id/pet_type_spinner"/>
+
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/pet_type_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:entries="@array/pet_type_array"
+            android:focusable="true"
+            android:minHeight="48dp"
+            android:spinnerMode="dropdown"
+            app:layout_constraintStart_toEndOf="@id/pet_type_text_view"
+            app:layout_constraintTop_toBottomOf="@id/pet_name_input_layout" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/pet_breed_input_layout"
+            style="@style/ThemeOverlay.Material3.AutoCompleteTextView.FilledBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/pet_type_spinner"
+            app:queryHint="Pet breed">
+
+            <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                android:id="@+id/pet_breed_edit_text"
+                android:layout_width="match_parent"
+                android:padding="16dp"
+                android:layout_height="match_parent"
+                android:hint="@string/pet_breed_hint" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <RadioGroup
+            android:id="@+id/pet_gender_radio_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/pet_breed_input_layout">
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/male" />
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/female" />
+        </RadioGroup>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/pet_years_input_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            app:layout_constraintEnd_toStartOf="@id/pet_months_input_layout"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/pet_gender_radio_group">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/pet_years_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="@string/years_hint" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/pet_months_input_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@id/pet_years_input_layout"
+            app:layout_constraintTop_toBottomOf="@id/pet_gender_radio_group">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/pet_months_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="@string/months_hint" />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/pet_weight_input_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/pet_years_input_layout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/pet_weight_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="@string/weight_hint" />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/pet_picture_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/pet_picture"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/pet_weight_input_layout"/>
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/pet_picture_image_view"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/pet_picture_text_view"
+            android:src="@drawable/round_add_black_24dp"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/pet_character_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/pet_picture_image_view"
+            android:text="@string/pet_character"/>
+
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/create_order_divider2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            app:layout_constraintTop_toBottomOf="@id/pet_character_text_view"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/pet_friendliness_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/create_order_divider2"
+            app:layout_constraintStart_toStartOf="parent"
+            android:text="@string/is_your_pet_friendly" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/other_people_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/other_people_radio_group"
+            app:layout_constraintTop_toTopOf="@id/other_people_radio_group"
+            android:text="@string/to_other_people"/>
+
+        <RadioGroup
+            android:id="@+id/other_people_radio_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/other_people_text_view"
+            app:layout_constraintTop_toBottomOf="@id/pet_friendliness_text_view"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/yes"/>
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/no"/>
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/don_t_know"/>
+
+        </RadioGroup>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/children_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/children_radio_group"
+            app:layout_constraintTop_toTopOf="@id/children_radio_group"
+            android:text="@string/to_children"/>
+
+        <RadioGroup
+            android:id="@+id/children_radio_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/children_text_view"
+            app:layout_constraintTop_toBottomOf="@id/other_people_text_view"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/yes"/>
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/no"/>
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/don_t_know"/>
+
+        </RadioGroup>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/cats_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/cats_radio_group"
+            app:layout_constraintTop_toTopOf="@id/cats_radio_group"
+            android:text="@string/to_cats"/>
+
+        <RadioGroup
+            android:id="@+id/cats_radio_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/cats_text_view"
+            app:layout_constraintTop_toBottomOf="@id/children_text_view"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/yes"/>
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/no"/>
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/don_t_know"/>
+
+        </RadioGroup>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/dogs_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/dogs_radio_group"
+            app:layout_constraintTop_toTopOf="@id/dogs_radio_group"
+            android:text="@string/to_dogs"/>
+
+        <RadioGroup
+            android:id="@+id/dogs_radio_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/dogs_text_view"
+            app:layout_constraintTop_toBottomOf="@id/cats_text_view"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/yes"/>
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/no"/>
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/don_t_know"/>
+
+        </RadioGroup>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/other_animals_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/other_animals_radio_group"
+            app:layout_constraintTop_toTopOf="@id/other_animals_radio_group"
+            android:text="@string/to_other_animals"/>
+
+        <RadioGroup
+            android:id="@+id/other_animals_radio_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/other_animals_text_view"
+            app:layout_constraintTop_toBottomOf="@id/dogs_text_view"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/yes"/>
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/no"/>
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/don_t_know"/>
+
+        </RadioGroup>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/what_animals_input_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/other_animals_radio_group"
+            android:hint="@string/what_animals_hint"
+            android:visibility="gone"
+            android:layout_margin="4dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/what_pets_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/what_animals_input_layout"
+            app:layout_constraintStart_toStartOf="parent"
+            android:text="@string/what_pets_can_live_with_your_pet"/>
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/dogs_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/what_pets_text_view"
+            app:layout_constraintStart_toStartOf="parent"
+            android:text="@string/dogs"/>
+
+        <RadioGroup
+            android:id="@+id/dogs_gender_radio_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/dogs_checkbox"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/male"/>
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/female"/>
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/any"/>
+
+        </RadioGroup>
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/cats_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/dogs_gender_radio_group"
+            app:layout_constraintStart_toStartOf="parent"
+            android:text="@string/cats"/>
+
+        <RadioGroup
+            android:id="@+id/cats_gender_radio_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cats_checkbox"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/male"/>
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/female"/>
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/any"/>
+
+        </RadioGroup>
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/other_animals_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/cats_gender_radio_group"
+            app:layout_constraintStart_toStartOf="parent"
+            android:text="@string/other_animals"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/other_animals_gender_input_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/other_animals_checkbox"
+            android:visibility="gone"
+            android:layout_margin="4dp"
+            android:hint="@string/what_animals_and_gender_hint">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/litter_box_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/other_animals_gender_input_layout"
+            app:layout_constraintBottom_toBottomOf="@id/litter_box_radio_group"
+            android:text="@string/is_your_pet_litter_box_trained"/>
+
+        <RadioGroup
+            android:id="@+id/litter_box_radio_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/litter_box_text_view"
+            app:layout_constraintTop_toBottomOf="@id/other_animals_gender_input_layout"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/yes"/>
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/no"/>
+
+        </RadioGroup>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/mark_things_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/litter_box_radio_group"
+            app:layout_constraintBottom_toBottomOf="@id/mark_things_radio_group"
+            android:text="@string/does_your_pet_mark_things"/>
+
+        <RadioGroup
+            android:id="@+id/mark_things_radio_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/mark_things_text_view"
+            app:layout_constraintTop_toBottomOf="@id/litter_box_radio_group"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/yes"/>
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/no"/>
+
+        </RadioGroup>
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/chew_things_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/mark_things_radio_group"
+            app:layout_constraintBottom_toBottomOf="@id/chew_things_radio_group"
+            android:text="@string/does_your_pet_chew_things"/>
+
+        <RadioGroup
+            android:id="@+id/chew_things_radio_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/chew_things_text_view"
+            app:layout_constraintTop_toBottomOf="@id/mark_things_radio_group"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/yes"/>
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/no"/>
+
+        </RadioGroup>
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/medical_info_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/chew_things_radio_group"
+            android:text="@string/medical_information"/>
+
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/create_order_divider3"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            app:layout_constraintTop_toBottomOf="@id/medical_info_text_view"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/is_vaccinated_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/is_your_pet_vaccinated"
+            app:layout_constraintTop_toBottomOf="@id/create_order_divider3"
+            app:layout_constraintBottom_toBottomOf="@id/is_vaccinated_radio_group"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <RadioGroup
+            android:id="@+id/is_vaccinated_radio_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/is_vaccinated_text_view"
+            app:layout_constraintTop_toBottomOf="@id/create_order_divider3"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/yes"/>
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/no"/>
+
+        </RadioGroup>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/is_sterilised_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/is_your_pet_sterilised"
+            app:layout_constraintTop_toBottomOf="@id/is_vaccinated_radio_group"
+            app:layout_constraintBottom_toBottomOf="@id/is_sterilised_radio_group"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <RadioGroup
+            android:id="@+id/is_sterilised_radio_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/is_sterilised_text_view"
+            app:layout_constraintTop_toBottomOf="@id/is_vaccinated_radio_group"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/yes"/>
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/no"/>
+
+        </RadioGroup>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/pet_diseases_input_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/is_sterilised_radio_group"
+            android:layout_margin="4dp"
+            android:hint="@string/any_diseases_hint">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/pet_diseases_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/pet_care_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/pet_diseases_input_layout"
+            android:text="@string/pet_care_details"/>
+
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/create_order_divider4"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            app:layout_constraintTop_toBottomOf="@id/pet_care_text_view"/>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/stay_alone_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/can_your_pet_stay_alone_at_home"
+            app:layout_constraintTop_toBottomOf="@id/create_order_divider4"
+            app:layout_constraintBottom_toBottomOf="@id/stay_alone_radio_group"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <RadioGroup
+            android:id="@+id/stay_alone_radio_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/stay_alone_text_view"
+            app:layout_constraintTop_toBottomOf="@id/create_order_divider4"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/yes"/>
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/no"/>
+
+        </RadioGroup>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/pet_food_input_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/stay_alone_radio_group"
+            android:layout_margin="4dp"
+            android:hint="@string/what_food_does_your_pet_eat_hint">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/pet_food_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/pet_bad_food_input_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/pet_food_input_layout"
+            android:layout_margin="4dp"
+            android:hint="@string/what_food_to_avoid_hint">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/pet_bad_food_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/pet_food_period_input_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/pet_bad_food_input_layout"
+            android:layout_margin="4dp"
+            android:hint="@string/how_often_to_feed_your_pet_hint">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/pet_food_period_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/pet_walk_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/does_your_pet_need_walking"
+            app:layout_constraintTop_toBottomOf="@id/pet_food_period_input_layout"
+            app:layout_constraintBottom_toBottomOf="@id/pet_walk_radio_group"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <RadioGroup
+            android:id="@+id/pet_walk_radio_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/pet_walk_text_view"
+            app:layout_constraintTop_toBottomOf="@id/pet_food_period_input_layout"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/yes"/>
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/no"/>
+
+        </RadioGroup>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/pet_walk_input_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/pet_walk_radio_group"
+            android:layout_margin="4dp"
+            android:hint="@string/how_often_to_walk_your_pet_hint">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/pet_walk_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/pet_walk_warnings_input_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/pet_walk_input_layout"
+            android:layout_margin="4dp"
+            android:hint="@string/any_warnings_while_walking_your_pet_hint">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/pet_walk_warnings_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/pet_play_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/does_your_pet_need_playing_with_it"
+            app:layout_constraintTop_toBottomOf="@id/pet_walk_warnings_input_layout"
+            app:layout_constraintBottom_toBottomOf="@id/pet_play_radio_group"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <RadioGroup
+            android:id="@+id/pet_play_radio_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/pet_play_text_view"
+            app:layout_constraintTop_toBottomOf="@id/pet_walk_warnings_input_layout"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/yes"/>
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/no"/>
+
+        </RadioGroup>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/pet_play_input_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/pet_play_radio_group"
+            android:layout_margin="4dp"
+            android:hint="@string/how_to_play_with_your_pet_hint">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/pet_play_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/pet_wash_input_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/pet_play_input_layout"
+            android:layout_margin="4dp"
+            android:hint="@string/how_to_wash_your_pet_or_its_place_hint">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/pet_wash_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/pet_recs_input_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/pet_wash_input_layout"
+            android:layout_margin="4dp"
+            android:hint="@string/any_more_recommendations_hint">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/pet_recs_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/submit_order_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/pet_recs_input_layout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_margin="4dp"
+            app:cornerRadius="8dp"
+            android:text="@string/submit_order"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
