@@ -1,0 +1,1 @@
+rootProject.name = "ru.petkeeper.petkeeper-backend"
